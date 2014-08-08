@@ -1,0 +1,53 @@
+<h1><%= @events.size %> Events</h1>
+
+		<% @events.each do |event| %>
+		 <article>
+			<header> <%= event.name %> </header>
+			<p><%= event.description %>
+			</p>
+			<table>
+		 	<tr>
+				<th>When:</th>
+					<td><%= event.starts_at %></td>
+			</tr>
+		 	<tr>
+				<th>Where:</th>
+					<td><%= event.location %></td>
+			</tr>
+		 	<tr>
+				<th>Price:</th>
+					<td><%= number_to_currency(event.price) %></td>
+			</tr>
+		 </table>
+	 </article>
+	<% end %> 
+		
+
+<!--
+Iteration 1: Plain HTML
+	
+	Listing generated at <%= @time %>	
+	<ul>
+		<li>BugSmash</li>
+		<li>Hackathon</li>
+		<li>Kata Camp</li>
+	</ul>
+	
+	
+	<ul>
+		@events.each do |event|
+		  <li>event</li>
+		end
+	</ul>
+	
+	Iteration 2: Just controller code, no DB connection
+	
+	<%= @events %>
+	
+	<ul>
+		<% @events.each do |event| %>
+		 <li> <%= event %></li>
+		<% end %> 
+	</ul>
+	
+	-->
